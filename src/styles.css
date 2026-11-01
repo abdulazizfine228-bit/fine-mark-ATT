@@ -1,0 +1,106 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --font-display: "Cormorant Garamond", "Playfair Display", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    /* FineMark — warm cream surfaces */
+    --background: oklch(0.98 0.012 70);
+    --foreground: oklch(0.22 0.06 255);
+    --card: oklch(0.995 0.008 70);
+    --card-foreground: oklch(0.22 0.06 255);
+    --popover: oklch(0.995 0.008 70);
+    --popover-foreground: oklch(0.22 0.06 255);
+    /* Deep navy from logo */
+    --primary: oklch(0.28 0.08 255);
+    --primary-foreground: oklch(0.98 0.012 70);
+    --secondary: oklch(0.93 0.03 55);
+    --secondary-foreground: oklch(0.28 0.08 255);
+    --muted: oklch(0.93 0.03 55);
+    --muted-foreground: oklch(0.45 0.05 255);
+    /* Warm peach/coral accent from logo */
+    --accent: oklch(0.78 0.12 50);
+    --accent-foreground: oklch(0.22 0.06 255);
+    --destructive: oklch(0.55 0.22 27);
+    --destructive-foreground: oklch(0.98 0.012 70);
+    --border: oklch(0.88 0.025 55);
+    --input: oklch(0.9 0.025 55);
+    --ring: oklch(0.78 0.12 50);
+    /* Peach gold accent */
+    --gold: oklch(0.82 0.13 55);
+    --gold-foreground: oklch(0.22 0.06 255);
+
+    --gradient-prestige: linear-gradient(135deg, oklch(0.82 0.13 55), oklch(0.28 0.08 255));
+    --gradient-gold: linear-gradient(135deg, oklch(0.85 0.12 55), oklch(0.78 0.13 45));
+    --shadow-elegant: 0 10px 40px -12px oklch(0.28 0.08 255 / 0.25);
+    --shadow-gold: 0 6px 24px -8px oklch(0.82 0.13 55 / 0.4);
+  }
+
+  .dark {
+    --background: oklch(0.18 0.05 255);
+    --foreground: oklch(0.96 0.015 70);
+    --card: oklch(0.22 0.06 255);
+    --card-foreground: oklch(0.96 0.015 70);
+    --popover: oklch(0.22 0.06 255);
+    --popover-foreground: oklch(0.96 0.015 70);
+    --primary: oklch(0.82 0.13 55);
+    --primary-foreground: oklch(0.18 0.05 255);
+    --secondary: oklch(0.28 0.06 255);
+    --secondary-foreground: oklch(0.96 0.015 70);
+    --muted: oklch(0.28 0.06 255);
+    --muted-foreground: oklch(0.72 0.03 70);
+    --accent: oklch(0.78 0.12 50);
+    --accent-foreground: oklch(0.18 0.05 255);
+    --destructive: oklch(0.6 0.2 27);
+    --destructive-foreground: oklch(0.96 0.015 70);
+    --border: oklch(0.3 0.06 255);
+    --input: oklch(0.3 0.06 255);
+    --ring: oklch(0.82 0.13 55);
+    --gold: oklch(0.82 0.13 55);
+    --gold-foreground: oklch(0.18 0.05 255);
+  }
+
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, .font-display { font-family: var(--font-display); letter-spacing: -0.01em; }
+}
